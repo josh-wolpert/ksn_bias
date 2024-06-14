@@ -10,4 +10,3 @@ Called by main.py and contains parameter values for landscape evolution models.
 
 figures.py
 Code used to extract data from models and make figures and videos. Each code block has a heading describing its purpose.
-![image](https://github.com/josh-wolpert/ksn_bias/assets/66105693/ae5b8321-de6f-4b67-8b66-c10ed8911b72)
