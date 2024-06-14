@@ -1,0 +1,42 @@
+# Parameter file for Main.py
+
+# Parameters describing run names and output locations
+output_parameters:
+    run_name: 'test'
+    output_dir: '/Volumes/PhD_1/ksn_Bias/model_runs2/'
+    save_frames_ic: True # Set to true if you want to save output timesteps during steady-state ramp-up time
+
+# Grid geometry and resolution
+grid:
+  grid_length: 200 # nodes
+  grid_width: 100 # nodes
+  grid_dxy: 100 # node spacing (meters)
+
+# Boundary condition parameters. Landlab scheme:
+#mg.BC_NODE_IS_CORE (Type 0)
+#mg.BC_NODE_IS_FIXED_VALUE (Type 1)
+#mg.BC_NODE_IS_FIXED_GRADIENT (Type 2)
+#mg.BC_NODE_IS_LOOPED (Type 3, used for looped boundaries)
+#mg.BC_NODE_IS_CLOSED (Type 4)
+bcs:
+  bc_right: 4
+  bc_top: 4
+  bc_left: 4
+  bc_bottom: 1
+  bc_nodes: [] # [6000, 1] # Option to assign node status on a node-by-node basis. As pairs of integers, node number is the first element, followed by the node's status (0, 1, 2, 3, or 4). 
+
+# Time variables
+time:
+  dt: 200 # years
+  run_time: 25000000 #16000000 # years
+
+# Stream power fluvial erosion parameters.
+fluvial_ero:
+  K_sp: 2.5e-11
+  m_sp: 1.5
+  n_sp: 3.0
+
+# Uplift rate parameters
+uplift:
+  ic_U: 0.0002 # m/yr; Upper uplift rate when reaching initial condition
+  ramp_U: 0.0002 # m/yr; Uplift rate at simulated ramps
